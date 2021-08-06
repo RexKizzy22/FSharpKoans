@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
+open System.Collections.Generic
 
 //---------------------------------------------------------------
 // Apply Your Knowledge!
@@ -60,6 +61,7 @@ module ``about the stock example`` =
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =
+            
         let result =  __
         
         AssertEquality "2012-03-13" result
