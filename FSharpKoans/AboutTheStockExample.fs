@@ -1,6 +1,8 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
-open System.Collections.Generic
+
+open System
+open System.Globalization
 
 //---------------------------------------------------------------
 // Apply Your Knowledge!
@@ -61,7 +63,23 @@ module ``about the stock example`` =
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =
-            
-        let result =  __
+        let realData price = 
+            price 
+                |> Double.Parse
+                |> abs 
+
+        let output =
+            stockData
+                |> List.skip 1
+                |> List.map (fun stock -> 
+                    let elements = stock.Split(',')
+                    let date = elements.[0]
+                    let openPrice = elements.[1] |> realData
+                    let closePrice = elements.[6] |> realData
+                    date, (closePrice - openPrice)
+                    )
+                |> List.maxBy snd
+
+        let result =  output |> fst
         
         AssertEquality "2012-03-13" result
