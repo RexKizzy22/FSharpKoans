@@ -2,7 +2,6 @@
 open FSharpKoans.Core
 
 open System
-open System.Globalization
 
 //---------------------------------------------------------------
 // Apply Your Knowledge!

@@ -35,7 +35,7 @@ module ``about modules`` =
         AssertEquality MushroomKingdom.Mario.Occupation "Plumber"
         
         let moduleType = MushroomKingdom.Mario.GetType()
-        AssertEquality moduleType typeof<Character>
+        AssertEquality moduleType typeof<MushroomKingdom.Character>
 
     [<Koan>]
     let ModulesCanContainFunctions() =

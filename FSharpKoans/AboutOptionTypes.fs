@@ -32,7 +32,7 @@ module ``about option types`` =
 
         AssertEquality noValue.IsSome false
         AssertEquality noValue.IsNone true
-        AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
+        AssertThrows<System.NullReferenceException> (fun () -> noValue.Value)
 
     [<Koan>]
     let UsingOptionTypesWithPatternMatching() =
@@ -68,4 +68,4 @@ module ``about option types`` =
 
         //HINT: look at the return type of the decideOn function
         AssertEquality (decideOn chronoTrigger) (Some "play it")
-        AssertEquality (decideOn halo) (Some "don't play")
+        AssertEquality (decideOn halo) None
